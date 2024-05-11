@@ -1,0 +1,20 @@
+name: orderfaz-backend-test
+services:
+    auth-service-app:
+        ports:
+            - 4001:4001
+        env_file:
+            - .env
+        image: auth-service-app
+    logistic-service-app:
+        ports:
+            - 4001:4001
+        env_file:
+            - .env
+        image: logistic-service-app
+    main-gateway-app:
+        ports:
+            - 4000:4000
+        env_file:
+            - .env
+        image: main-gateway-app
