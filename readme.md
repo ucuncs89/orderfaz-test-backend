@@ -170,6 +170,12 @@ npm run start
 
 ---
 
+- Architecture Diagram
+
+<img src="https://i.ibb.co/TtK8MPM/Untitled-2024-01-02-1430.png" width="80%"/>
+
+---
+
 more information contact me
 
 email: ucuncs.dev@gmail.com / ilham@ucun.dev
