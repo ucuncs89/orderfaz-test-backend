@@ -170,6 +170,15 @@ npm run start
 
 ---
 
+- ### Swagger Documentation
+  kunjungi pada link ini: http://localhost:4000/swagger/ atau http://{main-gate-app}/swagger/
+
+atau import tautan swagger json ini
+
+<a href="swagger-json.json">swagger-json.json</a>
+
+---
+
 - Architecture Diagram
 
 <img src="architecture-diagram.png" width="80%"/>

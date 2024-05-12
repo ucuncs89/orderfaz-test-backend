@@ -1,0 +1,110 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "operationId": "AuthController_register",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/RegisterDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["auth"]
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "operationId": "AuthController_login",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LoginDto" }
+            }
+          }
+        },
+        "responses": { "201": { "description": "" } },
+        "tags": ["auth"]
+      }
+    },
+    "/auth/user": {
+      "get": {
+        "operationId": "AuthController_getUserMe",
+        "parameters": [],
+        "responses": { "200": { "description": "" } },
+        "tags": ["auth"],
+        "security": [{ "bearer": [] }]
+      }
+    },
+    "/logistic/all": {
+      "get": {
+        "operationId": "LogisticController_getAll",
+        "parameters": [],
+        "responses": { "200": { "description": "" } },
+        "tags": ["logistic"],
+        "security": [{ "bearer": [] }]
+      }
+    },
+    "/logistic/search": {
+      "get": {
+        "operationId": "LogisticController_search",
+        "parameters": [
+          {
+            "name": "origin_name",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "destination_name",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["logistic"],
+        "security": [{ "bearer": [] }]
+      }
+    }
+  },
+  "info": {
+    "title": "Be Test OrderFaz",
+    "description": "",
+    "version": "0.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": { "scheme": "bearer", "bearerFormat": "JWT", "type": "http" }
+    },
+    "schemas": {
+      "RegisterDto": {
+        "type": "object",
+        "properties": {
+          "msisdn": { "type": "string" },
+          "name": { "type": "string" },
+          "username": { "type": "string" },
+          "password": { "type": "string" }
+        },
+        "required": ["msisdn", "name", "username", "password"]
+      },
+      "LoginDto": {
+        "type": "object",
+        "properties": {
+          "msisdn": { "type": "string" },
+          "password": { "type": "string" }
+        },
+        "required": ["msisdn", "password"]
+      }
+    }
+  }
+}
